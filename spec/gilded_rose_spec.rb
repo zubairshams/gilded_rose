@@ -8,7 +8,7 @@ describe "#update_quality" do
     let(:name) { "item" }
     let(:item) { Item.new(name, initial_sell_in, initial_quality) }
 
-    before { update_quality([item]) }
+    before { GlidedRose.update_quality([item]) }
 
     context 'before sell date' do
       specify 'decreses quality and sell in by 1' do

@@ -1,7 +1,9 @@
-def update_quality(items)
-  items.each do |item|
-    klass = klass_for(item)
-    klass.new(item).update
+class GlidedRose
+  def self.update_quality(items)
+    items.each do |item|
+      klass = klass_for(item)
+      klass.new(item).update
+    end
   end
 end
 
