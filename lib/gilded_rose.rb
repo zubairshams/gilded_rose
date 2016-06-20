@@ -1,4 +1,8 @@
 def update_quality(items)
+  items.each do |item|
+    klass = klass_for(item)
+    klass.new(item).update
+  end
 end
 
 class ItemUpdater
@@ -54,6 +58,18 @@ class ConjuredUpdater < ItemUpdater
     2.times {super}
   end
 end
+
+def klass_for(item)
+  ITEM_UPDATERS[item.name] || ItemUpdater
+end
+
+ITEM_UPDATERS = {
+  'Aged Brie'                                 => AgedBrieUpdater,
+  'Backstage passes to a TAFKAL80ETC concert' => BackstageUpdater,
+  'Sulfuras, Hand of Ragnaros'                => SulfurasUpdater,
+  'Conjured'                                  => ConjuredUpdater,
+}
+
 
 ######### DO NOT CHANGE BELOW #########
 
