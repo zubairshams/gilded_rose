@@ -104,5 +104,23 @@ describe "#update_quality" do
         end
       end
     end
+
+    context 'as Conjured' do
+      let(:name) {'Conjured'}
+
+      context 'before sell date' do
+        specify 'decreases quality by 2' do
+          expect(item.quality).to eq(initial_quality - 2)
+        end
+      end
+
+      context 'after sell date' do
+        let(:initial_sell_in) { 0 }
+
+        specify 'decreases quality by 4' do
+          expect(item.quality).to eq(initial_quality - 4)
+        end
+      end
+    end
   end
 end
