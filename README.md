@@ -1,13 +1,6 @@
 ## Setup
 
-Install Ruby 2.1.5 and bundler, OS X instructions below:
-
-```
-brew install rbenv ruby-build
-
-rbenv install # Uses version specified in .ruby-version
-gem install bundler
-```
+Install Ruby 2.3.1 and bundler
 
 Install the bundled gems and run the specs:
 
@@ -71,5 +64,3 @@ above 50, however `Sulfuras` is a legendary item and as such its
 ### Instructions
 
 - Given the above requirements, update `#update_quality` in `gilded_rose.rb` to support `Conjured` items.
-- Hint: Make use of `gilded_rose_spec.rb`.
-- Be prepared to talk about your approach and resulting implementation.
